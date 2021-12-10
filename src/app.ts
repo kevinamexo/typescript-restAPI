@@ -7,7 +7,7 @@ const app = express();
 const PORT = config.get<number>("port");
 
 app.listen(PORT, async () => {
-  console.log(`App is running on PORT ${PORT}`);
   await connect();
-  routes(app);
+  console.log(`App is running on PORT ${PORT}`);
+  routes(app); /// ADD ROUTES FOR THE APP INSTANCE
 });

@@ -3,10 +3,11 @@ import config from "config";
 import logger from "./logger";
 
 async function connect() {
+  console.log("CONNECTING TO MONGODB");
   const dbUri = config.get<string>("dbUri");
-
   try {
-    await mongoose.connect(dbUri);
+    mongoose.connect(dbUri);
+
     logger.info("Connected to MongoDB");
   } catch (e) {
     logger.info("Unable to connect to MongoDB");
